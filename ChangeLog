@@ -1,3 +1,29 @@
+Mon Oct 24 10:52:17 2016  Nobuyoshi Nakada  <nobu@ruby-lang.org>
+
+	* test/lib/test/unit.rb (Test::Unit::Parallel#deal): update the
+	  job status after a task finished, to show idling workers.
+
+Mon Oct 24 10:51:09 2016  Nobuyoshi Nakada  <nobu@ruby-lang.org>
+
+	* complex.c (Init_Complex): undefine methods inherited from
+	  Comparable, because Complex does not have <=> method.
+	  [Bug #12866]
+
+	* class.c (rb_undef_methods_from): undefine methods defined in
+	  super from klass.
+
+Mon Oct 24 10:19:44 2016  Nobuyoshi Nakada  <nobu@ruby-lang.org>
+
+	* complex.c (Init_Complex): undefine Complex#clamp, which does not
+	  work like other Comparable methods, because Complex does not
+	  have <=> method.  patched by Tim Peters <zomg.tim AT gmail.com>
+	  in [ruby-core:77720].  [Bug #12866]
+
+Sun Oct 23 11:41:41 2016  Nobuyoshi Nakada  <nobu@ruby-lang.org>
+
+	* include/ruby/encoding.h: include "ruby/ruby.h" explicitly for
+	  enum ruby_fl_type and VALUE.
+
 Sat Oct 22 23:33:55 2016  Nobuyoshi Nakada  <nobu@ruby-lang.org>
 
 	* parse.y (reg_compile_gen): always append error message to the
